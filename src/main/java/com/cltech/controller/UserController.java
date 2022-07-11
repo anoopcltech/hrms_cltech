@@ -2,11 +2,13 @@ package com.cltech.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import com.cltech.model.ResponseBean;
 import com.cltech.model.User;
 import com.cltech.service.SecurityService;
 import com.cltech.service.UserService;
@@ -60,4 +62,17 @@ public class UserController {
     public String welcome(Model model) {
         return "welcome";
     }
+    
+    
+    @PostMapping("/registrationNew")
+    public String registrationNew(User userForm) {
+
+        return userService.save(userForm);
+    }
+
+    @PostMapping("/loginCheck")
+    public String loginCheck(User userForm) {
+        return userService.loginAuthentication(userForm);
+    }
+    
 }

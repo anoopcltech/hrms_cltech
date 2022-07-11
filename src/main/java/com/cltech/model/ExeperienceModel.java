@@ -76,4 +76,10 @@ public class ExeperienceModel {
 	@Column(name="fk_employee_id")
 	private long fk_employee_id;
 
+	public ExeperienceModel() {
+		super();
+	}
+
+	
+	
 }
