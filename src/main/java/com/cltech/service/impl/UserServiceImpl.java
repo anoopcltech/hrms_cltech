@@ -61,4 +61,9 @@ public class UserServiceImpl implements UserService {
     }
     
     return ResponseBean.builder(Status.FAIL, "Login Unsuccessful", userForm.getUsername());}
+
+	  @Override
+	    public User findByUsernameOld(String username) {
+	        return userRepository.findByUsername(username);
+	    }
 }

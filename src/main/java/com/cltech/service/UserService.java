@@ -7,4 +7,5 @@ public interface UserService {
 	String save(User user);
 	String findByUsername(String username);
 	String loginAuthentication(User userForm);
+	User findByUsernameOld(String username);
 }
